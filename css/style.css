@@ -1,10 +1,15 @@
 .navbar{
-    background-color: lightblue;
+    background-color: #add8e6;
 }
 
 .nav-link{
     cursor: pointer;
     font-weight: 600;
+    color: black;
+}
+
+.nav-link:focus,:visited{
+    color: black;
 }
 
 .cgpa{
@@ -20,6 +25,15 @@
     margin-top: 1.2rem;
     background-color: lightblue;
     color: black;
+    border: none;
+}
+
+.btn-add:focus{
+    box-shadow: none !important;
+}
+
+.btn-add:active{
+    box-shadow: none !important;
 }
 
 .ask{

@@ -80,8 +80,11 @@ const courseItem = "<div class= \" col col-sm-6 \">\n<label for=\"course\">Cours
     </div> \
 </div> ` ;
 
-        // let gpa = document.querySelector('.cgpa')
-        // gpa.style.display = 'block';
+        let gpa = document.querySelector('.cgpa')
+        gpa.scrollIntoView({
+            behavior : "smooth",
+            block : "center"
+        })
     }
      
     var form = document.querySelector('#main-form')
@@ -114,14 +117,14 @@ const courseItem = "<div class= \" col col-sm-6 \">\n<label for=\"course\">Cours
         let btn = event.target;
         // get parent element of the button clicked
         let parent = btn.parentElement;
-
         console.log(parent)
+        let card = parent.querySelector('.card-body')
+        console.log(card)
         // create div and add div
-        let div = document.createElement('div')
-        div.classList.add('row')
-        div.classList.add('course-item')
-        div.innerHTML = courseItem;
-        parent.insertBefore(div,btn)
+        // let div = document.createElement('div')
+        let course = document.querySelector('.course-item');
+        let clone = course.cloneNode(true);
+        card.append(clone);
         form = document.querySelector('#main-form')
         form.addEventListener('submit',calculateGpa)
         console.log('course item added')
